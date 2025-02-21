@@ -1,0 +1,11 @@
+GET http://localhost:3001/api/blogs
+###
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+
+{
+  "author": "Ismail Marghich",
+  "url": "https://github.com/IsmailMarghich",
+  "title": "My github page",
+  "likes": 0
+}
