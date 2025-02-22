@@ -19,6 +19,19 @@ app.post('/api/blogs', async (req, res) => {
     return res.status(400).json({ error })
   }
 })
+app.delete('/api/blogs/:id', async (req, res) => {
+  try {
+    const blog = await Blog.findByPk(req.params.id)
+    if(blog) {
+      await blog.destroy()
+      res.json(blog)
+    }else {
+      res.status(404).end()
+    }
+  } catch (error) {
+    res.status(404).json({ error })
+  }
+})
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {

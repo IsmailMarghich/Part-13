@@ -9,3 +9,5 @@ Content-Type: application/json
   "title": "My github page",
   "likes": 0
 }
+###
+DELETE http://localhost:3001/api/blogs/5
