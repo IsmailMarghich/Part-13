@@ -10,4 +10,20 @@ Content-Type: application/json
   "likes": 0
 }
 ###
-DELETE http://localhost:3001/api/blogs/5
+DELETE http://localhost:3001/api/blogs/7
+
+###
+PUT http://localhost:3001/api/blogs/7
+Content-Type: application/json
+
+{
+  "likes": 10
+}
+###error
+PUT http://localhost:3001/api/blogs/7
+Content-Type: application/json
+
+{
+    "likes": "d"
+}
+###
