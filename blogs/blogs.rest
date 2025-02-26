@@ -1,0 +1,35 @@
+GET http://localhost:3001/api/blogs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlzbWFpbCIsImlkIjoxLCJpYXQiOjE3NDA1NzU2MDEsImV4cCI6MTc0MDY2MjAwMX0.ASBtmRtxtJl7Q2EaMByXpMPL0-UNCO7Tkwli0IwjcvM
+
+###
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlzbWFpbGNvZGVzQGdtYWlsLmNvbSIsImlkIjoxLCJpYXQiOjE3NDA1Nzg2ODgsImV4cCI6MTc0MDY2NTA4OH0.fis0DDVU6X2PEZosz0BT0tw1Mp7w-swh6r-Ry8oDDuw
+
+{
+  "author": "Ismail Marghich",
+  "url": "https://github.com/IsmailMarghich",
+  "title": "My github page",
+  "likes": 0
+}
+###
+DELETE http://localhost:3001/api/blogs/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlzbWFpbGNvZGVzQGdtYWlsLmNvbSIsImlkIjoxLCJpYXQiOjE3NDA1Nzg2ODgsImV4cCI6MTc0MDY2NTA4OH0.fis0DDVU6X2PEZosz0BT0tw1Mp7w-swh6r-Ry8oDDuw
+
+###
+PUT http://localhost:3001/api/blogs/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlzbWFpbCIsImlkIjoxLCJpYXQiOjE3NDA1NzU2MDEsImV4cCI6MTc0MDY2MjAwMX0.ASBtmRtxtJl7Q2EaMByXpMPL0-UNCO7Tkwli0IwjcvM
+
+{
+  "likes": 10
+}
+###error
+PUT http://localhost:3001/api/blogs/7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlzbWFpbCIsImlkIjoxLCJpYXQiOjE3NDA1NzU2MDEsImV4cCI6MTc0MDY2MjAwMX0.ASBtmRtxtJl7Q2EaMByXpMPL0-UNCO7Tkwli0IwjcvM
+
+{
+    "likes": "d"
+}
+###
