@@ -10,10 +10,12 @@ const { connectToDatabase } = require('./util/db')
 const blogRouter = require('./controllers/blogs')
 const usersRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')
+const authorRouter = require('./controllers/authors')
 app.use(express.json())
 app.use('/api/blogs',middleware.tokenExtractor ,blogRouter )
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
+app.use('/api/authors',middleware.tokenExtractor, authorRouter )
 app.use(middleware.errorHandler)
 
 const start = async () => {
