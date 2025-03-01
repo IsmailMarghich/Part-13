@@ -4,6 +4,8 @@ const errorHandler = (error, request, response, next) => {
   console.error(error)
   if (error.name === 'SequelizeValidationError' && error.message.includes('Validation isEmail on username failed')){
     return response.status(400).send({ error: 'username must be a valid email' })
+  }if (error.name === 'SequelizeValidationError' && error.message.includes('on year failed')){
+    return response.status(400).send({ error: 'year of a blog must be between 1991 and the current year' })
   }
   if (error.name === 'SequelizeValidationError') {
     return response.status(400).send({ error: 'Invalid body data, validation error' })

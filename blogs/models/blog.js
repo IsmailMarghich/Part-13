@@ -26,10 +26,29 @@ Blog.init(
     likes: {
       type: DataTypes.INTEGER,
       defaultValue: 0
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW
+    },
+    year: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: 1991,
+        max: new Date().getFullYear()
+      }
     }
   }, {
     sequelize,
     underscored: true,
+    timestamps: false,
     modelName: 'blog'
   })
 

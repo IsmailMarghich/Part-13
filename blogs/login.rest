@@ -1,8 +1,9 @@
+@auth_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlzbWFpbGNvZGVzQGdtYWlsLmNvbSIsImlkIjoxLCJpYXQiOjE3NDA4MzY1NDcsImV4cCI6MTc0MDkyMjk0N30.-bnr0GqyYEwePD6P6QW7vI3IXfySkvN5TJ_GGPMwkY8
 POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-  "username": "ismailcodes@gmail.com",
+  "username": "bob@gmail.com",
   "name": "Ismail Marghich"
 }
 ###
@@ -10,16 +11,16 @@ POST http://localhost:3001/api/login
 Content-Type: application/json
 
 {
-    "username": "ismailcodes@gmail.com",
+    "username": "bob@gmail.com",
     "password": "secret"
 }
 ###
 GET http://localhost:3001/api/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlzbWFpbCIsImlkIjoxLCJpYXQiOjE3NDA1NzU2MDEsImV4cCI6MTc0MDY2MjAwMX0.ASBtmRtxtJl7Q2EaMByXpMPL0-UNCO7Tkwli0IwjcvM
+Authorization: {{auth_token}}
 ###
 PUT http://localhost:3001/api/users/ismailcodes@gmail.com
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlzbWFpbCIsImlkIjoxLCJpYXQiOjE3NDA1NzU2MDEsImV4cCI6MTc0MDY2MjAwMX0.ASBtmRtxtJl7Q2EaMByXpMPL0-UNCO7Tkwli0IwjcvM
+Authorization: {{auth_token}}
 
 {
     "username": "ismailcodes@gmail.com"
