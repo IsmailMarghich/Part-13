@@ -1,0 +1,20 @@
+@auth_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvYkBnbWFpbC5jb20iLCJpZCI6MiwiaWF0IjoxNzQwOTk5NzQwLCJleHAiOjE3NDEwODYxNDB9.SSkDUI1nz6S6F7A8Wc5yCQOA3abRAP7sPgY-DDzAQV8
+POST http://localhost:3001/api/readinglists
+Content-Type: application/json
+Authorization: {{auth_token}}
+
+{
+  "blogId": 1,
+  "userId": 2
+}
+###
+GET http://localhost:3001/api/users/2?read=false
+Authorization: {{auth_token}}
+###
+PUT http://localhost:3001/api/readinglists/1
+Content-Type: application/json
+Authorization: {{auth_token}}
+
+{
+    "read": false
+}

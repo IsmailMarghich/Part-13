@@ -23,6 +23,7 @@ router.get('/', async (req, res) => {
     },
     include: {
       model: User,
+      as: 'users_reading',
       attributes: ['username']
     },
     where,
