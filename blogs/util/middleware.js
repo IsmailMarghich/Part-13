@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-
+const { Session, User } = require('../models')
 const errorHandler = (error, request, response, next) => {
   console.error(error)
   if (error.name === 'SequelizeValidationError' && error.message.includes('Validation isEmail on username failed')){
@@ -22,11 +22,23 @@ const errorHandler = (error, request, response, next) => {
     })}
   next(error)
 }
-const tokenExtractor = (req, res, next) => {
+const tokenExtractor = async (req, res, next) => {
   const authorization = req.get('authorization')
   if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
     try {
-      req.decodedToken = jwt.verify(authorization.substring(7), process.env.SECRET)
+      const decodedToken = jwt.verify(authorization.substring(7), process.env.SECRET)
+      const session = await Session.findOne({ where: { token: authorization.substring(7) } })
+      if (!session) {
+        return res.status(401).json({ error: 'Session expired or invalid token' })
+      }
+      console.log(decodedToken)
+      const user = await User.findByPk(decodedToken.id)
+
+      if (user.disabled) {
+        return res.status(403).json({ error: 'User is disabled' })
+      }
+      req.decodedToken = decodedToken
+      req.session = session
     } catch{
       return res.status(401).json({ error: 'token invalid' })
     }

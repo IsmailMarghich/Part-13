@@ -1,5 +1,4 @@
-@auth_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvYkBnbWFpbC5jb20iLCJpZCI6MiwiaWF0IjoxNzQwOTk5NzQwLCJleHAiOjE3NDEwODYxNDB9.SSkDUI1nz6S6F7A8Wc5yCQOA3abRAP7sPgY-DDzAQV8
-
+@auth_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvYkBnbWFpbC5jb20iLCJpZCI6MiwiaWF0IjoxNzQxMDg1ODc5LCJleHAiOjE3NDExNzIyNzl9.zKo2bx8k0DBWDm_3sv8rGvoeeRvscDzLTFn5Htd1nSs
 GET http://localhost:3001/api/blogs
 Authorization: {{auth_token}}
 ###

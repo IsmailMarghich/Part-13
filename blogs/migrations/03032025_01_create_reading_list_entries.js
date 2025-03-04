@@ -27,7 +27,6 @@ module.exports = {
       }
     })
 
-    // ✅ Prevent duplicate blog entries in the same user's reading list
     await queryInterface.addConstraint('reading_list_entries', {
       fields: ['user_id', 'blog_id'],
       type: 'unique',
